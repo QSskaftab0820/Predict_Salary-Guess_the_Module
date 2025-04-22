@@ -14,8 +14,10 @@ years_experience = st.number_input("Enter Years of Experience:", min_value=0.0, 
 if st.button("Predict Salary"):
     experience_input = np.array([[years_experience]])
     prediction = model.predict(experience_input) 
-    st.success(f"The predicted salary for {years_experience} years of experience is:₹{prediction[0]:,.2f}")
-    
+    usd_salary = prediction[0]
+    inr_salary = usd_salary * 15 # Conversion rate
+
+    st.success(f"The predicted salary for {years_experience} years of experience is: ₹{inr_salary:,.2f}PA")
 
 # --- Divider ---
 st.markdown("---")
