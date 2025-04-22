@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the model
-model = pickle.load(open("linear_regression_model.pkl", 'rb'))
+model = pickle.load(open("linear_regression_model.pkl"))
 
 # --- Salary Prediction Section ---
 st.title("💰 Salary Prediction App")
