@@ -11,11 +11,9 @@ st.write("This app predicts the salary based on years of experience using a simp
 
 years_experience = st.number_input("Enter Years of Experience:", min_value=0.0, max_value=50.0, value=1.0, step=0.5)
 
-usd_to_inr=83.2
 if st.button("Predict Salary"):
     experience_input = np.array([[years_experience]])
-    prediction = model.predict(experience_input)
-    prediction_inr=prediction_usd[0]*usd_to_inr 
+    prediction = model.predict(experience_input) 
     st.success(f"The predicted salary for {years_experience} years of experience is:₹{prediction[0]:,.2f}")
     
 
